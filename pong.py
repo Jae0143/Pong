@@ -16,3 +16,6 @@ wn.setup(width=800, height=600)
 wn.tracer(0)
 
 # Main game Loop
+while True:
+    # Update screen
+    wn.update()
