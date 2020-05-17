@@ -87,6 +87,14 @@ def paddle_b_up():
     # Set new y coordinate
     paddle_b.sety(y)
 
+# Function of Paddle_b movement to down
+# get y-coordinate
+    y = paddle_a.ycor()
+    # add 20 to y coordinate = go up
+    y -= 20
+    # Set new y coordinate
+    paddle_b.sety(y)
+
 # Keyboard binding
 # Detect keyboard input
 wn.listen()
