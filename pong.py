@@ -60,7 +60,7 @@ ball.goto(0, 0)
 # Ball movement horizontal
 ball.dx = 2
 # Ball movement horizontal
-ball.dy = 2
+ball.dy = -2
 
 
 # function of Paddle_a movement to up
@@ -124,3 +124,15 @@ while True:
     # Move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # Border Checking
+    # y top border
+    if ball.ycor() > 290:
+        ball.sety(290)
+        # Reverse direction of ball y movement
+        ball.dy *= -1
+    # y bottom border
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        # Reverse direction of ball y movement
+        ball.dy *= -1
