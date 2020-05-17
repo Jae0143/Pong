@@ -47,16 +47,27 @@ paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 
 # ball
 ball = turtle.Turtle()
-# speed animation (B)
+# speed animation (Ball)
 ball.speed(0)
-# shape (B)
+# shape (Ball)
 ball.shape("square")
-# Color (B)
+# Color (Ball)
 ball.color("white")
-# No drawing line (B)
+# No drawing line (Ball)
 ball.penup()
-# Set up coordinate (A)
+# Set up coordinate (Ball)
 ball.goto(0, 0)
+
+
+# Paddle_a movement to up function
+def paddle_a_up():
+    # get y-coordinate
+    y = paddle_a.ycor()
+    # add 20 to y coordinate = go up
+    y += 20
+    # Set new y coordinate
+    paddle_a.sety(y)
+
 
 # Main game Loop
 while True:
