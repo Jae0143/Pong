@@ -57,6 +57,10 @@ ball.color("white")
 ball.penup()
 # Set up coordinate (Ball)
 ball.goto(0, 0)
+# Ball movement horizontal
+ball.dx = 2
+# Ball movement horizontal
+ball.dy = 2
 
 
 # function of Paddle_a movement to up
@@ -116,3 +120,7 @@ wn.onkeypress(paddle_b_down, "Down")
 while True:
     # Update screen
     wn.update()
+
+    # Move the ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
