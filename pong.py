@@ -2,6 +2,8 @@ import turtle
 
 # Create Window
 wn = turtle.Screen()
+# Make window not resizable
+wn.cv._rootwindow.resizable(False, False)
 
 # Title
 wn.title("Pong")
@@ -126,13 +128,26 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
     # Border Checking
-    # y top border
+    # top border
     if ball.ycor() > 290:
         ball.sety(290)
         # Reverse direction of ball y movement
         ball.dy *= -1
-    # y bottom border
+    # bottom border
     if ball.ycor() < -290:
         ball.sety(-290)
         # Reverse direction of ball y movement
         ball.dy *= -1
+
+    # right border
+    if ball.xcor() > 390:
+        # Put the ball back to center
+        ball.goto(0, 0)
+        # Reverse direction of ball x movement
+        ball.dx *= -1
+    # Left border
+    if ball.xcor() < -390:
+        # Put the ball back to center
+        ball.goto(0, 0)
+        # Reverse direction of ball x movement
+        ball.dx *= -1
