@@ -59,7 +59,7 @@ ball.penup()
 ball.goto(0, 0)
 
 
-# Paddle_a movement to up function
+# function of Paddle_a movement to up
 def paddle_a_up():
     # get y-coordinate
     y = paddle_a.ycor()
@@ -68,11 +68,23 @@ def paddle_a_up():
     # Set new y coordinate
     paddle_a.sety(y)
 
+
+# function of Paddle_a movement to down
+def paddle_a_down():
+    # get y-coordinate
+    y = paddle_a.ycor()
+    # add 20 to y coordinate = go up
+    y -= 20
+    # Set new y coordinate
+    paddle_a.sety(y)
+
+
 # Keyboard binding
 # Detect keyboard input
 wn.listen()
-# When user presses w, use function paddle_a_up
+# When user presses w, use function paddle_a_up -> move up paddle a
 wn.onkeypress(paddle_a_up, "w")
+# When user presses s, use function paddle_a_down -> move down paddle a
 
 # Main game Loop
 while True:
