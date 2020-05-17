@@ -89,6 +89,7 @@ def paddle_b_up():
 
 # Function of Paddle_b movement to down
 # get y-coordinate
+def paddle_b_down():
     y = paddle_a.ycor()
     # add 20 to y coordinate = go up
     y -= 20
@@ -102,6 +103,12 @@ wn.listen()
 wn.onkeypress(paddle_a_up, "w")
 # When user presses s, use function paddle_a_down -> move down paddle a
 wn.onkeypress(paddle_a_down, "s")
+
+# When user presses upper arrow, use function paddle_b_up -> move up paddle b
+wn.onkeypress(paddle_b_up, "Up")
+# when user presses down arrow, use function paddle_b_down -> move down paddle b
+wn.onkey(paddle_b_down, "Down")
+
 
 # Main game Loop
 while True:
