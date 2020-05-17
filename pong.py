@@ -85,6 +85,7 @@ wn.listen()
 # When user presses w, use function paddle_a_up -> move up paddle a
 wn.onkeypress(paddle_a_up, "w")
 # When user presses s, use function paddle_a_down -> move down paddle a
+wn.onkeypress(paddle_a_down, "s")
 
 # Main game Loop
 while True:
