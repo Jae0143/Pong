@@ -45,6 +45,19 @@ paddle_b.goto(350, 0)
 # Set up size in ratio from 20px by 20px (B)
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 
+# ball
+ball = turtle.Turtle()
+# speed animation (B)
+ball.speed(0)
+# shape (B)
+ball.shape("square")
+# Color (B)
+ball.color("white")
+# No drawing line (B)
+ball.penup()
+# Set up coordinate (A)
+ball.goto(0, 0)
+
 # Main game Loop
 while True:
     # Update screen
