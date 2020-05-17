@@ -68,6 +68,11 @@ def paddle_a_up():
     # Set new y coordinate
     paddle_a.sety(y)
 
+# Keyboard binding
+# Detect keyboard input
+wn.listen()
+# When user presses w, use function paddle_a_up
+wn.onkeypress(paddle_a_up, "w")
 
 # Main game Loop
 while True:
