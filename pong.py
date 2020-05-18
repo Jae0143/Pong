@@ -64,6 +64,10 @@ ball.dx = 2
 # Ball movement horizontal
 ball.dy = -2
 
+# score
+score_a = 0
+score_b = 0
+
 # Pen
 pen = turtle.Turtle()
 # Moving speed of animation (no movement = 0)
@@ -76,7 +80,8 @@ pen.hideturtle()
 # location
 pen.goto(0, 260)
 # write
-pen.write("Player A: 0    PlayerB: 0", align="center", font=("ArcadeClassic", 40))
+pen.write("Player A: 0       Player B: 0", align="center", font=("ArcadeClassic", 40))
+
 
 # function of Paddle_a movement to up
 def paddle_a_up():
@@ -154,16 +159,27 @@ while True:
 
     # right border
     if ball.xcor() > 390:
+        score_a += 1
         # Put the ball back to center
         ball.goto(0, 0)
         # Reverse direction of ball x movement
         ball.dx *= -1
+        # score update
+        pen.clear()
+        pen.write("Player   A: {}       Player   B: {}".format(score_a, score_b), align="center",
+                  font=("ArcadeClassic", 40))
+
     # Left border
     if ball.xcor() < -390:
+        score_b += 1
         # Put the ball back to center
         ball.goto(0, 0)
         # Reverse direction of ball x movement
         ball.dx *= -1
+        # score update
+        pen.clear()
+        pen.write("Player   A: {}       Player   B: {}".format(score_a, score_b), align="center",
+                  font=("ArcadeClassic", 40))
 
     # Boarder checking with paddles
     # Paddle_a
