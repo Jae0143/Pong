@@ -29,7 +29,7 @@ paddle_a.color("white")
 paddle_a.penup()
 # Set up coordinate (A)
 paddle_a.goto(-350, 0)
-# Set up size in ratio from 20px by 20px (A)
+# Set up size in ratio from 20px by 20px (A) -> width = 100 px, length = 20
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 
 # Paddle B
@@ -151,3 +151,10 @@ while True:
         ball.goto(0, 0)
         # Reverse direction of ball x movement
         ball.dx *= -1
+
+    # Paddle & ball Collision
+    # Paddle_b
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
+        ball.setx(340)
+        ball.dx *= -1
+
