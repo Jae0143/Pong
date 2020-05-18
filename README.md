@@ -1,5 +1,5 @@
 # Classic Pong Game
-![](pong.png)
+![](pong.png) 
 
 ## Overview
 This is the classic pong game implemented with Python using turtle module.
