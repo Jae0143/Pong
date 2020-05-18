@@ -152,6 +152,16 @@ while True:
         # Reverse direction of ball x movement
         ball.dx *= -1
 
+    # Boarder checking with paddles
+    # Paddle_a
+    # top
+    if paddle_b.ycor() + 50 > 290:
+        paddle_b.sety(250)
+    # Bottom
+    if paddle_b.ycor() - 50 < -290:
+        paddle_b.sety(-250)
+
+
     # Paddle & ball Collision
     # Paddle_b
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
