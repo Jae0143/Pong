@@ -160,16 +160,23 @@ while True:
     # Bottom
     if paddle_b.ycor() - 50 < -290:
         paddle_b.sety(-250)
-
+    # Paddle_b
+    # top
+    if paddle_a.ycor() + 50 > 290:
+        paddle_a.sety(250)
+    # bottom
+    if paddle_a.ycor() - 50 < -290:
+        paddle_a.sety(-250)
 
     # Paddle & ball Collision
     # Paddle_b
-    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (
+            ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(340)
         ball.dx *= -1
 
     # Paddle_a
-    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (
+            ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-340)
         ball.dx *= -1
-
