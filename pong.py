@@ -1,4 +1,5 @@
 import turtle
+import os
 
 # Create Window
 wn = turtle.Screen()
@@ -60,9 +61,9 @@ ball.penup()
 # Set up coordinate (Ball)
 ball.goto(0, 0)
 # Ball movement horizontal
-ball.dx = 2
+ball.dx = 3
 # Ball movement horizontal
-ball.dy = -2
+ball.dy = -3
 
 # score
 score_a = 0
@@ -151,11 +152,16 @@ while True:
         ball.sety(290)
         # Reverse direction of ball y movement
         ball.dy *= -1
+        # Sound for mac
+        os.system("afplay bounce.wav&")
+
     # bottom border
     if ball.ycor() < -290:
         ball.sety(-290)
         # Reverse direction of ball y movement
         ball.dy *= -1
+        # Sound for mac
+        os.system("afplay bounce.wav&")
 
     # right border
     if ball.xcor() > 390:
@@ -203,9 +209,13 @@ while True:
             ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(340)
         ball.dx *= -1
+        # Sound for mac
+        os.system("afplay bounce.wav&")
 
     # Paddle_a
     if (ball.xcor() < -340 and ball.xcor() > -350) and (
             ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-340)
         ball.dx *= -1
+        # Sound for mac
+        os.system("afplay bounce.wav&")
