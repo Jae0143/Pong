@@ -64,6 +64,19 @@ ball.dx = 2
 # Ball movement horizontal
 ball.dy = -2
 
+# Pen
+pen = turtle.Turtle()
+# Moving speed of animation (no movement = 0)
+pen.speed(0)
+pen.color("white")
+# hide pen movement
+pen.penup()
+# hide turtle
+pen.hideturtle()
+# location
+pen.goto(0, 260)
+# write
+pen.write("Player A: 0    PlayerB: 0", align="center", font=("ArcadeClassic", 40))
 
 # function of Paddle_a movement to up
 def paddle_a_up():
